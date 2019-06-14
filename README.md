@@ -1,2 +1,2 @@
 "# TicTacToe" 
-This Branch is for upgrading the Computer classes "takeTurn" algorithm
+This is for upgrading the Computer classes "takeTurn" algorithm
