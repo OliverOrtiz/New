@@ -1,17 +1,27 @@
 import java.util.Scanner;
+import javax.swing.JFrame;
 public class TicTacToeInterface
 {
 	public static void main(String[] args)
 	{
-		// instance variables
 		Board board;
 		Player Player1;
 		Player Player2;
+		
 		Scanner kb = new Scanner(System.in);
+		
+		JFrame frame = new JFrame("TicTacToe");
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().add(new DrawBoard());
+		frame.setVisible(true);
+		frame.setBounds(50, 50, 500, 500);
+		
+		
 		System.out.println("Hello, welcome to TicTacToe!");	
 		
-		//game loop
-		while(true)
+		
+		while(!kb.hasNext("C") && !kb.hasNext("c"))//start menu
 		{	
 			
 			System.out.println("Select one: \nA) Single player \nB) Multiplayer \nC) Exit");
@@ -22,8 +32,9 @@ public class TicTacToeInterface
 			if(ans.equals("a")) //single player
 			{	
 				System.out.println("Player 1 select x or o (hint: o's go first)");//x or o
-				ans = kb.next().toLowerCase();
-				if(ans.equals("x"))
+				ans = kb.next().toLowerCase(); // process input
+				
+				if(ans.equals("x"))// assign player teams 
 				{
 					Player1 = new Person("x");
 					Player2 = new Computer("o");
@@ -33,8 +44,7 @@ public class TicTacToeInterface
 					Player1 = new Person("o");
 					Player2 = new Computer("x");
 				}
-				board = new Board();
-				board.start(Player1, Player2, kb);
+				
 			}
 			else if(ans.equals("b"))//two player
 			{
@@ -50,19 +60,16 @@ public class TicTacToeInterface
 					Player1 = new Person("o");
 					Player2 = new Person("x");
 				}
-				board = new Board();
-				board.start(Player1, Player2, kb);
-			}
-			else if(ans.equals("a"))
-			{
-				break;
 			}
 			else
 			{
-				System.out.println("oops, try again that is not an option");
+				System.out.println("You should have picked x or o... now you will paay!!!");
+				Player1 = new Person("x");
+				//Player2  = new Computer("x" , "DeathMode");
 			}
+			board = new Board();//run game
+			//board.start(Player1, Player2, kb);
 		}
-		//end game loop
 		System.out.println("Thanks for playing!!");
 	}	
 }

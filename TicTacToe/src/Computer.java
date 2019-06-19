@@ -7,6 +7,7 @@ public class Computer extends Player
 	}
 	public int takeTurn(Scanner kb , int[] pos)
 	{
+		/**
 		int ans = 0;
 		
 		for(int i = 0; i < pos.length; ++i)
@@ -17,8 +18,17 @@ public class Computer extends Player
 				 break;
 			 }
 			
-		}
-		return ans;
+		}*/
+		//if goes first
+		//if first turn select middle
+		//if not first turn...
 		
+		//if goes second
+		//if first turn
+		//if not first turn
+		return 0;
 	}
+
+	
+	
 }
