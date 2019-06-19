@@ -1,2 +1,2 @@
 "# TicTacToe" 
-This is for upgrading the Computer classes "takeTurn" algorithm
+This is for updationg from a console application to a JFrame Application
