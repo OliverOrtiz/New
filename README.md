@@ -1,2 +1,2 @@
 "# TicTacToe" 
-This is for upgrading the Computer classes "takeTurn" algorithm
+Simple TicTacToe game , with very simple very dumb computer ai
